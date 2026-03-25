@@ -25,6 +25,7 @@
     --gold-pale: #fdf3dc;
     --red: #c0392b;
     --green: #27ae60;
+    --blue: #2980b9;
     --shadow-card: 0 2px 20px rgba(26,26,46,0.08), 0 1px 4px rgba(26,26,46,0.05);
     --shadow-panel: 0 8px 40px rgba(26,26,46,0.12);
     --radius: 16px;
@@ -48,123 +49,7 @@
     overflow: hidden;
   }
 
-  /* ── Login Screen ───────────────────────────────── */
-  #loginScreen {
-    position: fixed; inset: 0;
-    background: #1a1a2e;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 200;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .login-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 24px;
-    padding: 48px 40px;
-    width: 360px;
-    max-width: 90vw;
-    text-align: center;
-    backdrop-filter: blur(10px);
-  }
-
-  .login-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
-
-  .login-logo-mark {
-    width: 44px; height: 44px;
-    background: var(--gold);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-  }
-
-  .login-subtitle {
-    font-size: 14px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-  }
-
-  .login-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .login-desc {
-    font-size: 14px;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 32px;
-    line-height: 1.6;
-  }
-
-  .btn-google {
-    width: 100%;
-    padding: 14px 20px;
-    background: #fff;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #1a1a2e;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    gap: 12px;
-    transition: all 0.18s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-  .btn-google:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(0,0,0,0.4); }
-  .btn-google:active { transform: none; }
-
-  .google-icon { width: 20px; height: 20px; }
-
-  .login-error {
-    margin-top: 16px;
-    font-size: 13px;
-    color: #e74c3c;
-    min-height: 20px;
-  }
-
-  /* ── Loading spinner ────────────────────────────── */
-  #loadingScreen {
-    position: fixed; inset: 0;
-    background: #1a1a2e;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 190;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .spinner {
-    width: 36px; height: 36px;
-    border: 3px solid rgba(200,149,42,0.2);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .loading-text {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.5px;
-  }
-
-  /* ── App Layout ─────────────────────────────────── */
+  /* ── Layout ─────────────────────────────────────── */
   .app {
     display: flex;
     width: 100%;
@@ -220,53 +105,13 @@
     font-size: 16px;
   }
 
-  /* ── User row ───────────────────────────────────── */
-  .user-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 14px;
-    padding: 8px 10px;
-    border-radius: var(--radius-sm);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .user-avatar {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
+  .sidebar-subtitle {
+    margin-top: 4px;
     font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    flex-shrink: 0;
-    overflow: hidden;
+    color: var(--ink-ghost);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
-
-  .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-  .user-name {
-    flex: 1;
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .btn-logout {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.3);
-    font-size: 16px;
-    cursor: pointer;
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: color 0.15s;
-    flex-shrink: 0;
-  }
-  .btn-logout:hover { color: #e74c3c; }
 
   .sidebar-section-label {
     padding: 20px 24px 8px;
@@ -294,6 +139,7 @@
     cursor: pointer;
     transition: background 0.18s;
     margin-bottom: 2px;
+    position: relative;
   }
 
   .project-item:hover { background: rgba(255,255,255,0.06); }
@@ -325,6 +171,49 @@
     font-weight: 500;
   }
 
+  .sidebar-data-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .btn-data {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.5);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+    display: block;
+  }
+  .btn-export {
+    border-color: rgba(200,149,42,0.3);
+    background: rgba(200,149,42,0.08);
+    color: rgba(240,192,96,0.7);
+  }
+  .btn-export:hover {
+    background: rgba(200,149,42,0.18);
+    color: var(--gold-light);
+    border-color: rgba(200,149,42,0.5);
+  }
+  .btn-import:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+  .last-backup {
+    padding: 0 4px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+
   .btn-new-project {
     margin: 12px;
     padding: 12px 16px;
@@ -341,29 +230,6 @@
     width: calc(100% - 24px);
   }
   .btn-new-project:hover { background: rgba(200,149,42,0.2); }
-
-  /* ── Sync indicator ─────────────────────────────── */
-  .sync-indicator {
-    margin: 0 12px 12px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.25);
-    display: flex; align-items: center; gap: 6px;
-    padding: 0 4px;
-  }
-
-  .sync-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    flex-shrink: 0;
-  }
-
-  .sync-dot.syncing {
-    background: var(--gold);
-    animation: pulse 1s ease-in-out infinite;
-  }
-
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
   /* ── Main Panel ─────────────────────────────────── */
   .main {
@@ -397,16 +263,17 @@
     align-items: center;
     gap: 16px;
     margin-top: 8px;
-    flex-wrap: wrap;
   }
 
   .project-progress-text {
     font-size: 13px;
     color: var(--ink-ghost);
+    font-weight: 400;
   }
 
   .progress-bar-wrap {
-    width: 120px; height: 4px;
+    width: 120px;
+    height: 4px;
     background: var(--paper-warm);
     border-radius: 2px;
     overflow: hidden;
@@ -458,8 +325,13 @@
     color: var(--ink-ghost);
     cursor: pointer;
     transition: all 0.15s;
+    letter-spacing: 0.3px;
   }
-  .filter-pill.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .filter-pill.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
   .filter-pill:hover:not(.active) { border-color: var(--ink-ghost); color: var(--ink-soft); }
 
   /* ── Task Area ──────────────────────────────────── */
@@ -486,6 +358,8 @@
   .empty-icon { font-size: 48px; opacity: 0.4; }
 
   /* ── Task Card ──────────────────────────────────── */
+  .task-group { margin-bottom: 8px; }
+
   .task-card {
     background: var(--paper-card);
     border: 1px solid rgba(26,26,46,0.07);
@@ -495,6 +369,7 @@
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 8px;
+    cursor: pointer;
     transition: all 0.18s;
     box-shadow: var(--shadow-card);
     animation: slideIn 0.2s ease;
@@ -520,12 +395,17 @@
     cursor: pointer;
     font-size: 13px;
   }
-  .task-checkbox.checked { background: var(--green); border-color: var(--green); color: #fff; }
+  .task-checkbox.checked {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
 
   .task-body { flex: 1; min-width: 0; }
 
   .task-text {
     font-size: 15px;
+    font-weight: 400;
     color: var(--ink);
     line-height: 1.4;
     word-break: break-word;
@@ -536,6 +416,7 @@
     gap: 6px;
     margin-top: 8px;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .badge {
@@ -543,6 +424,7 @@
     font-weight: 500;
     padding: 3px 8px;
     border-radius: 20px;
+    letter-spacing: 0.3px;
   }
 
   .badge-priority-alta { background: #fdecea; color: var(--red); }
@@ -567,7 +449,9 @@
   .task-delete:hover { background: #fdecea; color: var(--red); }
 
   /* ── Add Task Bar ───────────────────────────────── */
-  .add-task-bar { padding: 0 36px 24px; }
+  .add-task-bar {
+    padding: 0 36px 24px;
+  }
 
   .add-task-form {
     background: var(--paper-card);
@@ -580,6 +464,7 @@
   .add-task-row {
     display: flex;
     align-items: center;
+    gap: 0;
   }
 
   .add-task-input {
@@ -625,52 +510,8 @@
     cursor: pointer;
     transition: background 0.15s;
     white-space: nowrap;
-    margin-right: 8px;
   }
   .btn-add-task:hover { background: var(--gold); }
-
-  /* ── Welcome ────────────────────────────────────── */
-  .welcome-panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 40px;
-    text-align: center;
-  }
-
-  .welcome-icon { font-size: 56px; }
-
-  .welcome-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--ink);
-    font-weight: 700;
-  }
-
-  .welcome-text {
-    font-size: 15px;
-    color: var(--ink-ghost);
-    max-width: 320px;
-    line-height: 1.6;
-  }
-
-  .btn-welcome {
-    margin-top: 8px;
-    padding: 14px 28px;
-    background: var(--ink);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .btn-welcome:hover { background: var(--gold); }
 
   /* ── Modal ──────────────────────────────────────── */
   .modal-overlay {
@@ -730,7 +571,9 @@
   }
   .form-input:focus { border-color: var(--gold); }
 
-  .color-picker-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .color-picker-row {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
 
   .color-swatch {
     width: 28px; height: 28px;
@@ -772,15 +615,59 @@
   }
   .btn-confirm:hover { background: var(--gold); }
 
+  /* ── Welcome state ──────────────────────────────── */
+  .welcome-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .welcome-icon { font-size: 56px; }
+
+  .welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .welcome-text {
+    font-size: 15px;
+    color: var(--ink-ghost);
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .btn-welcome {
+    margin-top: 8px;
+    padding: 14px 28px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-welcome:hover { background: var(--gold); }
+
   /* ── Scrollbar ──────────────────────────────────── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: rgba(26,26,46,0.12); border-radius: 2px; }
 
-  /* ── Portrait Mode ───────────────────────────────── */
+  /* ── Portrait / Vertical Mode ───────────────────── */
   @media (orientation: portrait), (max-width: 820px) {
 
     html, body { overflow: hidden; }
+
     .app { flex-direction: column; }
 
     .sidebar {
@@ -794,23 +681,16 @@
 
     .sidebar-header {
       padding-top: max(52px, calc(env(safe-area-inset-top) + 16px));
-      padding-bottom: 10px;
+      padding-bottom: 14px;
       padding-left: 20px;
       padding-right: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid rgba(255,255,255,0.07);
-      flex-wrap: wrap;
-      gap: 8px;
     }
 
-    .user-row {
-      margin-top: 0;
-      flex-shrink: 0;
-      max-width: 180px;
-    }
-
+    .sidebar-subtitle { display: none; }
     .sidebar-section-label { display: none; }
 
     .project-list {
@@ -827,6 +707,7 @@
 
     .project-item {
       flex-shrink: 0;
+      flex-direction: row;
       padding: 8px 14px;
       border-radius: 20px;
       margin-bottom: 0;
@@ -856,70 +737,50 @@
       align-self: center;
     }
 
-    .sync-indicator { display: none; }
-
     .main { flex: 1; overflow: hidden; }
+
     .main-header { padding: 16px 18px 0; }
     .project-title { font-size: 22px; }
+    .project-meta { gap: 10px; flex-wrap: wrap; }
+    .progress-bar-wrap { width: 80px; }
+
     .filter-bar { padding: 12px 18px 0; gap: 6px; }
     .filter-pill { padding: 5px 12px; font-size: 11px; }
+
     .task-area { padding: 14px 18px 20px; }
     .task-card { padding: 14px 14px; }
     .task-delete { opacity: 1; }
+
     .add-task-bar { padding: 0 18px 20px; }
     .add-task-input { padding: 13px 16px; font-size: 14px; }
     .add-task-options { padding: 0 8px 0 0; }
+
     .modal { width: 92vw; padding: 24px 20px; }
+    .modal-title { font-size: 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- LOADING -->
-<div id="loadingScreen">
-  <div style="font-family:'Playfair Display',serif;font-size:32px;color:#fff;display:flex;align-items:center;gap:10px">
-    <span style="width:40px;height:40px;background:#c8952a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">◈</span>
-    Atlas
-  </div>
-  <div class="spinner"></div>
-  <div class="loading-text">Conectando…</div>
-</div>
+<div class="app">
 
-<!-- LOGIN -->
-<div id="loginScreen" style="display:none">
-  <div class="login-card">
-    <div class="login-logo">
-      <span class="login-logo-mark">◈</span> Atlas
-    </div>
-    <div class="login-subtitle">Gestor de Proyectos</div>
-    <div class="login-title">Bienvenido</div>
-    <div class="login-desc">Inicia sesión para acceder a tus proyectos desde cualquier dispositivo.</div>
-    <button class="btn-google" onclick="loginGoogle()">
-      <svg class="google-icon" viewBox="0 0 24 24">
-        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-      </svg>
-      Continuar con Google
-    </button>
-    <div class="login-error" id="loginError"></div>
-  </div>
-</div>
-
-<!-- APP -->
-<div class="app" id="appShell" style="display:none">
-
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="app-logo">
         <span class="logo-mark">◈</span> Atlas
       </div>
-      <div class="user-row" id="userRow">
-        <div class="user-avatar" id="userAvatar">?</div>
-        <span class="user-name" id="userName">…</span>
-        <button class="btn-logout" title="Cerrar sesión" onclick="logout()">⏻</button>
+      <div class="sidebar-subtitle">Gestor de Proyectos</div>
+      <div class="sidebar-data-actions">
+        <button class="btn-data btn-export" onclick="exportData()">
+          ↑ Exportar copia de seguridad
+        </button>
+        <label class="btn-data btn-import">
+          ↓ Restaurar desde copia
+          <input type="file" accept=".json" onchange="importData(event)" style="display:none">
+        </label>
       </div>
+      <div class="last-backup" id="lastBackupLabel"></div>
     </div>
 
     <div class="sidebar-section-label">Proyectos</div>
@@ -928,18 +789,14 @@
     <button class="btn-new-project" onclick="openNewProjectModal()">
       <span style="font-size:16px">＋</span> Nuevo Proyecto
     </button>
-
-    <div class="sync-indicator" id="syncIndicator">
-      <div class="sync-dot" id="syncDot"></div>
-      <span id="syncText">Sincronizado</span>
-    </div>
   </aside>
 
+  <!-- MAIN -->
   <main class="main" id="mainPanel">
     <div class="welcome-panel">
       <div class="welcome-icon">🗂️</div>
       <div class="welcome-title">Bienvenido a Atlas</div>
-      <div class="welcome-text">Organiza tus proyectos y desglósalos en tareas concretas.</div>
+      <div class="welcome-text">Organiza tus proyectos y desglósalos en tareas concretas. Empieza creando tu primer proyecto.</div>
       <button class="btn-welcome" onclick="openNewProjectModal()">Crear primer proyecto</button>
     </div>
   </main>
@@ -964,193 +821,49 @@
   </div>
 </div>
 
-<!-- Firebase SDKs -->
-<script type="module">
-import { initializeApp }           from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
-                                   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, collection, doc, onSnapshot,
-         addDoc, updateDoc, deleteDoc, serverTimestamp, query, orderBy }
-                                   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-// ── Firebase config ───────────────────────────────────
-const firebaseConfig = {
-  apiKey: "AIzaSyBJ2eFFNXloUcNt3rhPXExy2R0T_h5gFic",
-  authDomain: "atlas-proyectos.firebaseapp.com",
-  projectId: "atlas-proyectos",
-  storageBucket: "atlas-proyectos.firebasestorage.app",
-  messagingSenderId: "890895024787",
-  appId: "1:890895024787:web:e0752f68d7a89bece54366"
-};
-
-const app  = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db   = getFirestore(app);
-
-// ── State ─────────────────────────────────────────────
+<script>
+// ── State ────────────────────────────────────────────
 const COLORS = ['#e74c3c','#e67e22','#f1c40f','#27ae60','#1abc9c','#3498db','#9b59b6','#e91e63','#607d8b','#c8952a'];
 let selectedColor = COLORS[5];
-let projects = [];          // local cache from Firestore
+let projects = [];
 let activeProjectId = null;
-let activeFilter    = 'todas';
-let currentUser     = null;
-let unsubProjects   = null; // Firestore listener cleanup
+let activeFilter = 'todas';
 
-// ── Auth ──────────────────────────────────────────────
-window.loginGoogle = async () => {
-  document.getElementById('loginError').textContent = '';
-  try {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
-  } catch (e) {
-    document.getElementById('loginError').textContent =
-      e.code === 'auth/popup-closed-by-user' ? 'Inicio cancelado.' : 'Error al iniciar sesión. Intenta de nuevo.';
-  }
-};
-
-window.logout = async () => {
-  if (!confirm('¿Cerrar sesión?')) return;
-  if (unsubProjects) unsubProjects();
-  projects = []; activeProjectId = null;
-  await signOut(auth);
-};
-
-onAuthStateChanged(auth, user => {
-  if (user) {
-    currentUser = user;
-    showApp(user);
-    subscribeProjects(user.uid);
-  } else {
-    currentUser = null;
-    if (unsubProjects) { unsubProjects(); unsubProjects = null; }
-    showLogin();
-  }
-});
-
-// ── UI state transitions ──────────────────────────────
-function showApp(user) {
-  document.getElementById('loadingScreen').style.display = 'none';
-  document.getElementById('loginScreen').style.display   = 'none';
-  document.getElementById('appShell').style.display      = 'flex';
-
-  // User info
-  const nameEl   = document.getElementById('userName');
-  const avatarEl = document.getElementById('userAvatar');
-  nameEl.textContent = user.displayName || user.email || 'Usuario';
-  if (user.photoURL) {
-    avatarEl.innerHTML = `<img src="${user.photoURL}" alt="">`;
-  } else {
-    avatarEl.textContent = (user.displayName || 'U')[0].toUpperCase();
-  }
+// ── Persistence ──────────────────────────────────────
+function save() { localStorage.setItem('atlas_data', JSON.stringify(projects)); }
+function load() {
+  try { projects = JSON.parse(localStorage.getItem('atlas_data')) || []; } catch { projects = []; }
 }
 
-function showLogin() {
-  document.getElementById('loadingScreen').style.display = 'none';
-  document.getElementById('loginScreen').style.display   = 'flex';
-  document.getElementById('appShell').style.display      = 'none';
+// ── Init ─────────────────────────────────────────────
+load();
+renderColorPicker();
+renderSidebar();
+updateLastBackupLabel();
+if (projects.length > 0) selectProject(projects[0].id);
+
+// ── Color Picker ─────────────────────────────────────
+function renderColorPicker() {
+  const el = document.getElementById('colorPicker');
+  el.innerHTML = COLORS.map(c =>
+    `<div class="color-swatch${c===selectedColor?' selected':''}" style="background:${c}" onclick="selectColor('${c}')"></div>`
+  ).join('');
 }
 
-// ── Firestore: realtime listener ──────────────────────
-function subscribeProjects(uid) {
-  setSyncing(true);
-  const q = query(collection(db, 'users', uid, 'projects'), orderBy('createdAt', 'desc'));
-  unsubProjects = onSnapshot(q, snap => {
-    projects = snap.docs.map(d => ({ firestoreId: d.id, ...d.data() }));
-    setSyncing(false);
-    renderSidebar();
-    // Keep active project selected if it still exists
-    if (activeProjectId && projects.find(p => p.firestoreId === activeProjectId)) {
-      renderMain();
-    } else if (projects.length) {
-      selectProject(projects[0].firestoreId);
-    } else {
-      activeProjectId = null;
-      showWelcome();
-    }
-  }, err => {
-    console.error(err);
-    setSyncing(false);
-  });
-}
-
-// ── Sync indicator ────────────────────────────────────
-function setSyncing(on) {
-  const dot  = document.getElementById('syncDot');
-  const text = document.getElementById('syncText');
-  if (!dot) return;
-  dot.className  = 'sync-dot' + (on ? ' syncing' : '');
-  text.textContent = on ? 'Sincronizando…' : 'Sincronizado';
-}
-
-// ── Project CRUD ──────────────────────────────────────
-window.openNewProjectModal = () => {
-  selectedColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+function selectColor(c) {
+  selectedColor = c;
   renderColorPicker();
-  document.getElementById('newProjectName').value = '';
-  openModal('projectModal');
-  setTimeout(() => document.getElementById('newProjectName').focus(), 200);
-};
+}
 
-window.createProject = async () => {
-  const name = document.getElementById('newProjectName').value.trim();
-  if (!name) { document.getElementById('newProjectName').focus(); return; }
-  closeModal('projectModal');
-  setSyncing(true);
-  await addDoc(collection(db, 'users', currentUser.uid, 'projects'), {
-    name,
-    color: selectedColor,
-    tasks: [],
-    createdAt: serverTimestamp()
-  });
-  // onSnapshot will update the UI
-};
-
-window.deleteProject = async (firestoreId) => {
-  if (!confirm('¿Eliminar este proyecto y todas sus tareas?')) return;
-  setSyncing(true);
-  await deleteDoc(doc(db, 'users', currentUser.uid, 'projects', firestoreId));
-};
-
-// ── Task CRUD ─────────────────────────────────────────
-window.addTask = async (firestoreId) => {
-  const input    = document.getElementById('newTaskInput');
-  const text     = input.value.trim();
-  if (!text) { input.focus(); return; }
-  const priority = document.getElementById('taskPriority').value;
-  const project  = projects.find(p => p.firestoreId === firestoreId);
-  const newTask  = { id: uid(), text, priority, done: false, created: Date.now() };
-  const updated  = [newTask, ...(project.tasks || [])];
-  input.value = '';
-  input.focus();
-  setSyncing(true);
-  await updateDoc(doc(db, 'users', currentUser.uid, 'projects', firestoreId), { tasks: updated });
-};
-
-window.toggleTask = async (firestoreId, taskId) => {
-  const project = projects.find(p => p.firestoreId === firestoreId);
-  const updated = project.tasks.map(t => t.id === taskId ? { ...t, done: !t.done } : t);
-  setSyncing(true);
-  await updateDoc(doc(db, 'users', currentUser.uid, 'projects', firestoreId), { tasks: updated });
-};
-
-window.deleteTask = async (firestoreId, taskId) => {
-  const project = projects.find(p => p.firestoreId === firestoreId);
-  const updated = project.tasks.filter(t => t.id !== taskId);
-  setSyncing(true);
-  await updateDoc(doc(db, 'users', currentUser.uid, 'projects', firestoreId), { tasks: updated });
-};
-
-// ── Render Sidebar ────────────────────────────────────
+// ── Sidebar ───────────────────────────────────────────
 function renderSidebar() {
   const el = document.getElementById('projectList');
-  if (!el) return;
   if (!projects.length) { el.innerHTML = ''; return; }
   el.innerHTML = projects.map(p => {
-    const done  = (p.tasks || []).filter(t => t.done).length;
-    const total = (p.tasks || []).length;
+    const done = p.tasks.filter(t => t.done).length;
+    const total = p.tasks.length;
     return `
-      <div class="project-item${p.firestoreId === activeProjectId ? ' active' : ''}"
-           onclick="selectProject('${p.firestoreId}')">
+      <div class="project-item${p.id===activeProjectId?' active':''}" onclick="selectProject('${p.id}')">
         <div class="project-dot" style="background:${p.color}"></div>
         <span class="project-name">${escHtml(p.name)}</span>
         <span class="project-count">${done}/${total}</span>
@@ -1158,27 +871,46 @@ function renderSidebar() {
   }).join('');
 }
 
+// ── Project CRUD ──────────────────────────────────────
+function openNewProjectModal() {
+  selectedColor = COLORS[Math.floor(Math.random()*COLORS.length)];
+  renderColorPicker();
+  document.getElementById('newProjectName').value = '';
+  openModal('projectModal');
+  setTimeout(()=>document.getElementById('newProjectName').focus(),200);
+}
+
+function createProject() {
+  const name = document.getElementById('newProjectName').value.trim();
+  if (!name) { document.getElementById('newProjectName').focus(); return; }
+  const project = { id: uid(), name, color: selectedColor, tasks: [], created: Date.now() };
+  projects.unshift(project);
+  save();
+  closeModal('projectModal');
+  renderSidebar();
+  selectProject(project.id);
+}
+
 // ── Select Project ────────────────────────────────────
-window.selectProject = (id) => {
+function selectProject(id) {
   activeProjectId = id;
-  activeFilter    = 'todas';
+  activeFilter = 'todas';
   renderSidebar();
   renderMain();
-};
+}
 
-// ── Render Main ───────────────────────────────────────
+// ── Main Panel ────────────────────────────────────────
 function renderMain() {
-  const project = projects.find(p => p.firestoreId === activeProjectId);
-  if (!project) { showWelcome(); return; }
+  const project = projects.find(p => p.id === activeProjectId);
+  if (!project) return;
 
-  const tasks  = project.tasks || [];
-  const total  = tasks.length;
-  const done   = tasks.filter(t => t.done).length;
-  const pct    = total ? Math.round((done / total) * 100) : 0;
+  const total = project.tasks.length;
+  const done = project.tasks.filter(t => t.done).length;
+  const pct = total ? Math.round((done/total)*100) : 0;
 
-  let filtered = tasks;
-  if (activeFilter === 'pendientes')  filtered = tasks.filter(t => !t.done);
-  if (activeFilter === 'completadas') filtered = tasks.filter(t => t.done);
+  let filtered = project.tasks;
+  if (activeFilter === 'pendientes') filtered = filtered.filter(t => !t.done);
+  if (activeFilter === 'completadas') filtered = filtered.filter(t => t.done);
 
   document.getElementById('mainPanel').innerHTML = `
     <div class="main-header">
@@ -1193,7 +925,7 @@ function renderMain() {
         </div>
       </div>
       <div class="header-actions">
-        <button class="btn-icon" onclick="deleteProject('${project.firestoreId}')">🗑</button>
+        <button class="btn-icon" title="Eliminar proyecto" onclick="deleteProject('${project.id}')">🗑</button>
       </div>
     </div>
 
@@ -1203,13 +935,15 @@ function renderMain() {
       <button class="filter-pill${activeFilter==='completadas'?' active':''}" onclick="setFilter('completadas')">Completadas</button>
     </div>
 
-    <div class="task-area">${renderTasks(filtered, project)}</div>
+    <div class="task-area" id="taskArea">
+      ${renderTasks(filtered, project)}
+    </div>
 
     <div class="add-task-bar">
       <div class="add-task-form">
         <div class="add-task-row">
           <input class="add-task-input" id="newTaskInput" placeholder="Añadir nueva tarea…" maxlength="200"
-            onkeydown="if(event.key==='Enter') addTask('${project.firestoreId}')">
+            onkeydown="if(event.key==='Enter') addTask('${project.id}')">
           <div class="add-task-options">
             <select class="option-select" id="taskPriority">
               <option value="media">⚡ Media</option>
@@ -1217,29 +951,29 @@ function renderMain() {
               <option value="baja">🟢 Baja</option>
             </select>
           </div>
-          <div style="padding:8px 8px 8px 0">
-            <button class="btn-add-task" onclick="addTask('${project.firestoreId}')">Agregar</button>
+          <div style="padding:8px 12px 8px 0">
+            <button class="btn-add-task" onclick="addTask('${project.id}')">Agregar</button>
           </div>
         </div>
       </div>
     </div>
   `;
-  setTimeout(() => { const i = document.getElementById('newTaskInput'); if (i) i.focus(); }, 50);
+  setTimeout(()=>{ const i=document.getElementById('newTaskInput'); if(i) i.focus(); },50);
 }
 
 function renderTasks(tasks, project) {
-  if (!tasks.length) return `
-    <div class="empty-state">
+  if (!tasks.length) {
+    return `<div class="empty-state">
       <div class="empty-icon">✦</div>
       <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink-soft)">Sin tareas aquí</div>
       <div>Agrega la primera tarea de este proyecto</div>
     </div>`;
+  }
 
   return tasks.map(t => `
-    <div class="task-card${t.done ? ' done' : ''}">
-      <div class="task-checkbox${t.done ? ' checked' : ''}"
-           onclick="toggleTask('${project.firestoreId}','${t.id}')">
-        ${t.done ? '✓' : ''}
+    <div class="task-card${t.done?' done':''}" id="task-${t.id}">
+      <div class="task-checkbox${t.done?' checked':''}" onclick="toggleTask('${project.id}','${t.id}')">
+        ${t.done?'✓':''}
       </div>
       <div class="task-body">
         <div class="task-text">${escHtml(t.text)}</div>
@@ -1248,14 +982,162 @@ function renderTasks(tasks, project) {
           <span class="badge badge-date">${formatDate(t.created)}</span>
         </div>
       </div>
-      <button class="task-delete" onclick="deleteTask('${project.firestoreId}','${t.id}')">×</button>
-    </div>`).join('');
+      <button class="task-delete" onclick="deleteTask('${project.id}','${t.id}')" title="Eliminar">×</button>
+    </div>
+  `).join('');
+}
+
+// ── Task CRUD ─────────────────────────────────────────
+function addTask(projectId) {
+  const input = document.getElementById('newTaskInput');
+  const text = input.value.trim();
+  if (!text) { input.focus(); return; }
+  const priority = document.getElementById('taskPriority').value;
+  const project = projects.find(p => p.id === projectId);
+  project.tasks.unshift({ id: uid(), text, priority, done: false, created: Date.now() });
+  save();
+  input.value = '';
+  input.focus();
+  renderMain();
+  renderSidebar();
+}
+
+function toggleTask(projectId, taskId) {
+  const project = projects.find(p => p.id === projectId);
+  const task = project.tasks.find(t => t.id === taskId);
+  task.done = !task.done;
+  save();
+  renderMain();
+  renderSidebar();
+}
+
+function deleteTask(projectId, taskId) {
+  const project = projects.find(p => p.id === projectId);
+  project.tasks = project.tasks.filter(t => t.id !== taskId);
+  save();
+  renderMain();
+  renderSidebar();
+}
+
+function deleteProject(projectId) {
+  if (!confirm('¿Eliminar este proyecto y todas sus tareas?')) return;
+  projects = projects.filter(p => p.id !== projectId);
+  activeProjectId = projects.length ? projects[0].id : null;
+  save();
+  renderSidebar();
+  if (activeProjectId) renderMain();
+  else {
+    document.getElementById('mainPanel').innerHTML = `
+      <div class="welcome-panel">
+        <div class="welcome-icon">🗂️</div>
+        <div class="welcome-title">Sin Proyectos</div>
+        <div class="welcome-text">Crea un nuevo proyecto para empezar a organizar tus tareas.</div>
+        <button class="btn-welcome" onclick="openNewProjectModal()">Crear Proyecto</button>
+      </div>`;
+  }
+}
+
+// ── Filters ───────────────────────────────────────────
+function setFilter(f) {
+  activeFilter = f;
+  renderMain();
+}
+
+// ── Modal helpers ─────────────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) closeModal(el.id); });
+});
+
+// ── Keyboard shortcut ─────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(el=>closeModal(el.id));
+});
+
+// ── Export / Import ───────────────────────────────────
+function exportData() {
+  if (!projects.length) {
+    alert('No hay proyectos que exportar.');
+    return;
+  }
+  const now  = new Date();
+  const data = { version: 1, exported: now.toISOString(), projects };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  const fecha = now.toLocaleDateString('es-MX', { year:'numeric', month:'2-digit', day:'2-digit' }).replace(/\//g,'-');
+  a.href     = url;
+  a.download = `atlas-copia-${fecha}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  // Save timestamp of last backup
+  localStorage.setItem('atlas_last_backup', now.toISOString());
+  updateLastBackupLabel();
+}
+
+function updateLastBackupLabel() {
+  const el  = document.getElementById('lastBackupLabel');
+  if (!el) return;
+  const ts  = localStorage.getItem('atlas_last_backup');
+  if (!ts) { el.textContent = 'Sin copias exportadas aún'; return; }
+  const d   = new Date(ts);
+  const hoy = new Date();
+  const dias = Math.floor((hoy - d) / 86400000);
+  let texto;
+  if (dias === 0) texto = `Última copia: hoy ${d.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'})}`;
+  else if (dias === 1) texto = 'Última copia: ayer';
+  else texto = `Última copia: hace ${dias} días`;
+  el.textContent = texto;
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data     = JSON.parse(e.target.result);
+      const imported = data.projects || (Array.isArray(data) ? data : null);
+      if (!imported || !Array.isArray(imported)) {
+        alert('Archivo no válido. Usa una copia exportada desde Atlas.');
+        return;
+      }
+      if (projects.length > 0) {
+        const merge = confirm(
+          `Se encontraron ${imported.length} proyecto(s) en la copia.\n\n` +
+          `Aceptar → Combinar con los actuales\n` +
+          `Cancelar → Reemplazar todo`
+        );
+        if (merge) {
+          const existingIds = new Set(projects.map(p => p.id));
+          const nuevos = imported.filter(p => !existingIds.has(p.id));
+          projects = [...projects, ...nuevos];
+          alert(`✓ Se agregaron ${nuevos.length} proyecto(s) nuevo(s).`);
+        } else {
+          projects = imported;
+          alert(`✓ ${projects.length} proyecto(s) restaurados correctamente.`);
+        }
+      } else {
+        projects = imported;
+      }
+      activeProjectId = projects.length ? projects[0].id : null;
+      save();
+      renderSidebar();
+      updateLastBackupLabel();
+      if (activeProjectId) renderMain(); else showWelcome();
+    } catch {
+      alert('Error al leer el archivo. Asegúrate de que sea una copia válida de Atlas.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
 }
 
 function showWelcome() {
-  const el = document.getElementById('mainPanel');
-  if (!el) return;
-  el.innerHTML = `
+  document.getElementById('mainPanel').innerHTML = `
     <div class="welcome-panel">
       <div class="welcome-icon">🗂️</div>
       <div class="welcome-title">Sin Proyectos</div>
@@ -1264,36 +1146,16 @@ function showWelcome() {
     </div>`;
 }
 
-// ── Filter ────────────────────────────────────────────
-window.setFilter = (f) => { activeFilter = f; renderMain(); };
-
-// ── Color picker ──────────────────────────────────────
-function renderColorPicker() {
-  document.getElementById('colorPicker').innerHTML = COLORS.map(c =>
-    `<div class="color-swatch${c === selectedColor ? ' selected' : ''}"
-          style="background:${c}" onclick="pickColor('${c}')"></div>`
-  ).join('');
-}
-
-window.pickColor = (c) => { selectedColor = c; renderColorPicker(); };
-
-// ── Modal helpers ─────────────────────────────────────
-window.openModal  = (id) => document.getElementById(id).classList.add('open');
-window.closeModal = (id) => document.getElementById(id).classList.remove('open');
-
-document.querySelectorAll('.modal-overlay').forEach(el =>
-  el.addEventListener('click', e => { if (e.target === el) closeModal(el.id); })
-);
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(el => closeModal(el.id));
-});
-
 // ── Utils ─────────────────────────────────────────────
-function uid()     { return Math.random().toString(36).slice(2, 10); }
-function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function priorityLabel(p) { return { alta:'🔴 Alta', media:'⚡ Media', baja:'🟢 Baja' }[p] || p; }
-function formatDate(ts)   { return new Date(ts).toLocaleDateString('es-MX',{day:'numeric',month:'short'}); }
-
+function uid() { return Math.random().toString(36).slice(2,10); }
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function priorityLabel(p) {
+  return { alta:'🔴 Alta', media:'⚡ Media', baja:'🟢 Baja' }[p] || p;
+}
+function formatDate(ts) {
+  const d = new Date(ts);
+  return d.toLocaleDateString('es-MX', { day:'numeric', month:'short' });
+}
 </script>
 </body>
 </html>
